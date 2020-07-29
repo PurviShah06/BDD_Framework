@@ -19,7 +19,7 @@ public class BrowserManager  extends  MyUtils{
         {
 
             System.setProperty("webdriver.chrome.driver","src\\test\\Resources\\Browser Drivers\\chromedriver.exe");
-            //Creat ChromeDriver object to open Google Chrome Browser
+            //Create ChromeDriver object to open Google Chrome Browser
             driver = new ChromeDriver();
             //open Url by using TestdataConfig.properties
             driver.get(loadProp.getProperty("Url"));
@@ -28,7 +28,7 @@ public class BrowserManager  extends  MyUtils{
         {
             //Open Firefox .Exe
             System.setProperty("webdriver.gecko.driver", "src\\test\\Resources\\Browser Drivers\\geckodriver.exe");
-            //Creat geckodriver to open FireFox Browser
+            //Create geckodriver object to open FireFox Browser
             driver = new FirefoxDriver();
             //open Url by using TestdataConfig.properties
             driver.get(loadProp.getProperty("Url"));
@@ -39,11 +39,10 @@ public class BrowserManager  extends  MyUtils{
             System.setProperty("webdriver.ie.driver","src\\test\\Resources\\Browser Drivers\\IEDriverServer.exe");
             DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
             capabilities.setCapability("ignoreZoomSetting", true);
-            //Creat geckodriver to open IE Browser
+            //Create object of IEDriver to open IE Browser
             driver = new InternetExplorerDriver();
             //open Url by using TestdataConfig.properties
-            driver.manage().window().maximize();
-            driver.get("https://demo.nopcommerce.com/");
+            driver.get(loadProp.getProperty("Url"));
 
         }else{
            System.out.println("Browser Not Open.... Try Again");
