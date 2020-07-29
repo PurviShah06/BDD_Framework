@@ -32,13 +32,14 @@ public class RegisterPage extends MyUtils {//create inheritance between Classes
     public void userEnterRegistrationDetails()//create Method
     {
         clickable(_genderButton);//call clickable method to select gender
-        waituntillElmentVisible(_fristName,30);//add explicit wait
+        waituntillElmentVisible(_fristName,80);//add explicit wait
 
         //call SendKey method to send text to first name by using TesTDataConfig.properties
+        Sleep1(6);
         sendKeyElements(_fristName,loadProp.getProperty("FirstName"));
 
         //Use Explcit Wait
-        waituntillElmentVisible(_lastName,30);
+        waituntillElmentVisible(_lastName,60);
 
         // call sendkeyElements method to send text to last name by using Testdataconfig.properties
         sendKeyElements(_lastName,loadProp.getProperty("lastname"));
