@@ -23,7 +23,7 @@ public class HomePage extends MyUtils { //create inheritance between Classes
         clickable(_registerClickButton);
     }
 
-
-
-
+    public void userclickonCategory(String category) {
+        clickable((By.linkText(category)));
+    }
 }
