@@ -33,13 +33,13 @@ public class BrowserManager  extends  MyUtils{
             DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
             capabilities.setCapability("ignoreZoomSetting", true);
             //Create object of IEDriver to open IE Browser
-            driver = new InternetExplorerDriver();
+             driver = new InternetExplorerDriver();
         }else{
-           System.out.println("Browser Not Open.... Try Again");
+           System.out.println("Browser Not Open.... "+loadProp.getProperty("browser")+"Try Again");
         }
-        //open Url by using TestdataConfig.properties
-        driver.get(loadProp.getProperty("Url"));
-        //window maximize
+           //open Url by using TestdataConfig.properties
+         driver.get(loadProp.getProperty("Url"));
+         //window maximize
          driver.manage().window().maximize();
         //default implicit wait for 30 sec to driver instance
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);

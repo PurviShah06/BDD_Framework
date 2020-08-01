@@ -1,6 +1,6 @@
 Feature: Registration feature
 
-  @trail
+  @Test
   Scenario: User should able to register successfully so that user can use all user functionality
   on my application.
     Given user is already on HomePage.
