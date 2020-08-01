@@ -1,8 +1,10 @@
 package org.example;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.testng.Assert;
 
 public class MyStepDef {
     //Create Object of Classes
@@ -42,5 +44,19 @@ public class MyStepDef {
         registerSuccessPage.verifyRegistrationCompleteText();
         //call method through objectv to click on continue button
         registerSuccessPage.clickOnContinueButton();
+    }
+
+    @Given("^user is already on HomePage$")
+    public void userIsAlreadyOnHomePage() {
+        //call method of homepage verification text
+        homePage.homepageverification();
+    }
+    @When("^user click on \"([^\"]*)\" link from homePage\\.$")
+    public void userClickOnLinkFromHomePage(String category)  {
+       homePage.userclickonCategory(category);
+    }
+    @Then("^user should able to navigate to \"([^\"]*)\" successfully\\.$")
+    public void userShouldAbleToNavigateToSuccessfully(String expectedUrl)  {
+    Assert.assertEquals(MyUtils.getUrl(),expectedUrl,"User is not able to navigate to this Category");
     }
 }

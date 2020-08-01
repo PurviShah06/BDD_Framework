@@ -91,6 +91,8 @@ public class MyUtils extends BasePage { //create inheritance between Classes
         catch (IOException e) {
             e.printStackTrace();
         }}
-
+    public static String getUrl(){
+        return driver.getCurrentUrl();
+    }
 }
 
